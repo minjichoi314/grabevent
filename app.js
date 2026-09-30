@@ -347,12 +347,12 @@
     }
 
     const key = event.key.toLowerCase();
-    const controlled = ['arrowleft','arrowright','a','d',' ','c','r'];
+    const controlled = ['arrowleft','arrowright',' ','c','r'];
     if (!controlled.includes(key)) return;
     event.preventDefault();
     clearTimeout(keyboardTimer);
-    if (key === 'arrowleft' || key === 'a') moveBy(-3.2);
-    if (key === 'arrowright' || key === 'd') moveBy(3.2);
+    if (key === 'arrowleft') moveBy(-3.2);
+    if (key === 'arrowright') moveBy(3.2);
     if (key === ' ') grab();
     if (key === 'c') centerClaw();
     if (key === 'r') resetGame();
