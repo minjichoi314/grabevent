@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <title>Lucky Grab</title>
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./style-v3.css?v=20260930-3" />
 </head>
 <body>
   <main class="app-shell">
@@ -89,14 +89,14 @@
   <div class="result-layer" id="resultLayer" hidden>
     <div class="result-card" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
       <div class="result-ball" id="resultBall"><span>★</span></div>
-      <p class="result-kicker">MESSAGE</p>
+      <p class="result-kicker">오늘의 메시지</p>
       <h2 id="resultTitle">오늘의 한마디</h2>
-      <blockquote id="quoteText"></blockquote>
+      <blockquote id="quoteText">오늘도 당신에게는 다시 시작할 수 있는 힘이 있습니다.</blockquote>
       <p class="result-count" id="quoteCounter"></p>
-      <button id="continueButton" type="button">계속 플레이</button>
+      <button id="continueButton" type="button">다시 뽑기</button>
     </div>
   </div>
 
-  <script src="./app.js" defer></script>
+  <script src="./app-v3.js?v=20260930-3" defer></script>
 </body>
 </html>
