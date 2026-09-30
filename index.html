@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#eef0f2" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>Lucky Grab</title>
+  <link rel="stylesheet" href="./style-v7.css?v=20260930-7" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="game-card" aria-label="공 뽑기 게임 화면">
+      <div class="cabinet" id="cabinet">
+        <div class="game-bg" aria-hidden="true">
+          <div class="bunting bunting-left"></div>
+          <div class="bunting bunting-right"></div>
+          <div class="burst burst-left"></div>
+          <div class="burst burst-right"></div>
+          <div class="grass"></div>
+          <div class="cloud cloud-a"></div>
+          <div class="cloud cloud-b"></div>
+        </div>
+
+        <div class="claw" id="claw" aria-hidden="true">
+          <div class="carriage"><span></span><span></span></div>
+          <div class="cable"></div>
+          <div class="claw-neck"></div>
+          <div class="claw-head"></div>
+          <div class="claw-arms">
+            <i class="arm arm-left"></i>
+            <i class="arm arm-right"></i>
+          </div>
+        </div>
+
+        <div class="ball-pit" id="ballPit" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="control-card" aria-label="게임 조작부">
+      <div class="controller-wrap">
+        <div class="arcade-base" id="joystick" role="application" aria-label="조이스틱" tabindex="0">
+          <div class="base-shadow"></div>
+          <div class="base-top"></div>
+          <div class="stick-gate"></div>
+          <div class="stick-shaft" id="stickShaft"></div>
+          <div class="stick-ball" id="stick"></div>
+        </div>
+
+        <div class="button-bank" aria-label="방향 및 뽑기 버튼">
+          <button class="arcade-button green" id="leftButton" type="button" aria-label="왼쪽">
+            <span class="button-cap"></span><span class="button-label">왼쪽</span>
+          </button>
+          <button class="arcade-button red" id="rightButton" type="button" aria-label="오른쪽">
+            <span class="button-cap"></span><span class="button-label">오른쪽</span>
+          </button>
+          <button class="arcade-button blue" id="upButton" type="button" aria-label="위">
+            <span class="button-cap"></span><span class="button-label">위</span>
+          </button>
+          <button class="arcade-button yellow" id="downButton" type="button" aria-label="아래">
+            <span class="button-cap"></span><span class="button-label">아래</span>
+          </button>
+          <button class="arcade-button purple grab" id="grabButton" type="button" aria-label="뽑기">
+            <span class="button-cap"></span><span class="button-label">GRAB</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="result-layer" id="resultLayer" hidden>
+    <div class="result-card" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+      <div class="result-ball" id="resultBall"><span>★</span></div>
+      <p class="result-kicker">오늘의 메시지</p>
+      <h2 id="resultTitle">오늘의 한마디</h2>
+      <blockquote id="quoteText"></blockquote>
+      <button id="continueButton" type="button">다시 뽑기</button>
+    </div>
+  </div>
+
+  <script src="./app-v7.js?v=20260930-7" defer></script>
+</body>
+</html>
