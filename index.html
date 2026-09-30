@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c1117" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Lucky Grab</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="app-shell" id="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">TABLET CRANE GAME</p>
+        <h1>LUCKY GRAB</h1>
+      </div>
+      <div class="status-pill"><span class="status-dot"></span>READY</div>
+    </header>
+
+    <section class="game-card" aria-label="공 뽑기 게임 화면">
+      <div class="cabinet" id="cabinet">
+        <div class="glass-glow glass-glow-a"></div>
+        <div class="glass-glow glass-glow-b"></div>
+        <div class="rear-panel"></div>
+        <div class="rail-x"></div>
+        <div class="rail-y" id="railY"></div>
+
+        <div class="claw" id="claw" aria-hidden="true">
+          <div class="carriage"><span></span><span></span></div>
+          <div class="cable"></div>
+          <div class="claw-neck"></div>
+          <div class="claw-head"></div>
+          <div class="claw-arms">
+            <i class="arm arm-left"></i>
+            <i class="arm arm-right"></i>
+          </div>
+        </div>
+
+        <div class="ball-pit" id="ballPit" aria-hidden="true"></div>
+
+        <div class="hud hud-left"><span>SCORE</span><strong id="score">000</strong></div>
+        <div class="hud hud-right"><span>BALLS</span><strong id="ballCount">18</strong></div>
+        <div class="position-readout" id="positionReadout">X 50 · Y 24</div>
+        <div class="floor-edge"></div>
+      </div>
+    </section>
+
+    <section class="control-card" aria-label="게임 조작부">
+      <div class="control-copy">
+        <div>
+          <p class="control-label">JOYSTICK</p>
+          <h2>상·하·좌·우로 집게 이동</h2>
+        </div>
+        <p class="hint">원하는 공 위에 집게를 맞춘 후 GRAB을 누르세요.</p>
+      </div>
+
+      <div class="controller-grid">
+        <div class="joystick-wrap">
+          <div class="joystick" id="joystick" role="application" aria-label="상하좌우 조이스틱" tabindex="0">
+            <div class="joy-ring"></div>
+            <div class="joy-axis joy-axis-x"></div>
+            <div class="joy-axis joy-axis-y"></div>
+            <span class="dir dir-up">▲</span>
+            <span class="dir dir-down">▼</span>
+            <span class="dir dir-left">◀</span>
+            <span class="dir dir-right">▶</span>
+            <div class="stick" id="stick"><span></span></div>
+          </div>
+          <p class="keyboard-help">키보드 테스트: 방향키 / WASD</p>
+        </div>
+
+        <div class="action-panel">
+          <button class="grab-button" id="grabButton" type="button">
+            <span>PUSH</span>
+            <strong>GRAB</strong>
+          </button>
+          <div class="action-status" id="actionStatus" aria-live="polite">READY</div>
+          <button class="reset-button" id="resetButton" type="button">게임 초기화</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="message-card">
+      <span class="message-icon">✦</span>
+      <div>
+        <p>뽑기에 성공하면</p>
+        <strong>100가지 명언·응원 문구 중 하나가 나옵니다.</strong>
+      </div>
+    </section>
+  </main>
+
+  <div class="result-layer" id="resultLayer" hidden>
+    <div class="result-card" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+      <div class="result-ball" id="resultBall"><span>★</span></div>
+      <p class="result-kicker">TODAY'S MESSAGE</p>
+      <h2 id="resultTitle">오늘의 한마디</h2>
+      <blockquote id="quoteText"></blockquote>
+      <p class="result-count" id="quoteCounter"></p>
+      <button id="continueButton" type="button">계속 플레이</button>
+    </div>
+  </div>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
